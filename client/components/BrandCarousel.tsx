@@ -19,14 +19,12 @@ export default function BrandCarousel() {
 
   useEffect(() => {
     if (!emblaApi) return;
-    let raf = 0;
-    const autoScroll = () => {
-      if (!emblaApi) return;
-      emblaApi.scrollBy(0.002, true);
-      raf = requestAnimationFrame(autoScroll);
-    };
-    raf = requestAnimationFrame(autoScroll);
-    return () => cancelAnimationFrame(raf);
+    const id = setInterval(() => {
+      try {
+        emblaApi.scrollNext();
+      } catch {}
+    }, 2500);
+    return () => clearInterval(id);
   }, [emblaApi]);
 
   return (
