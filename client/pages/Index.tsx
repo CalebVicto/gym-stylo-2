@@ -30,7 +30,7 @@ export default function Index() {
       </section>
 
       <section className="container mx-auto py-8 md:py-12" id="categorias">
-        <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-secondary/60 via-muted/40 to-background/40 p-6 backdrop-blur">
+        <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-secondary/60 via-muted/40 to-background/40 p-6 backdrop-blur bg-noise">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="font-display text-3xl md:text-4xl uppercase tracking-wider">
               Categorías destacadas
