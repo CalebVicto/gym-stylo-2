@@ -68,6 +68,7 @@ export default function Index() {
 
       {/* Ads section */}
       <section className="container mx-auto py-8 md:py-12">
+        <h2 className="mb-4 font-display text-3xl md:text-4xl uppercase tracking-wider">Anuncios</h2>
         <AdBanner
           image="https://cdn.builder.io/api/v1/image/assets%2Fdecd85479f4c448b8692e5839094666d%2Ff57eff3720a44e5eb2db90823324754f?format=webp&width=1600"
           title="¡Manos a la obra!"
