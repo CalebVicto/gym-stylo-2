@@ -6,7 +6,7 @@ const NotFound = () => {
 
   useEffect(() => {
     console.error(
-      "404 Error: User attempted to access non-existent route:",
+      "404 Error: Ruta no encontrada:",
       location.pathname,
     );
   }, [location.pathname]);
@@ -15,12 +15,12 @@ const NotFound = () => {
     <div className="container mx-auto py-20">
       <div className="mx-auto max-w-xl rounded-2xl border border-border/60 bg-secondary/60 p-10 text-center">
         <div className="font-display text-5xl text-primary">404</div>
-        <p className="mt-2 text-sm text-muted-foreground">Oops! Page not found.</p>
+        <p className="mt-2 text-sm text-muted-foreground">¡Ups! Página no encontrada.</p>
         <Link
           to="/"
           className="mt-6 inline-block rounded-lg bg-primary px-5 py-3 font-semibold uppercase tracking-wider text-primary-foreground hover:bg-primary/90"
         >
-          Back Home
+          Volver al inicio
         </Link>
       </div>
     </div>
