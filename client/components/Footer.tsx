@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="mt-16 border-t border-transparent bg-gradient-to-b from-[#e65100] to-[#000000] text-white">
+    <footer className="mt-16 border-t border-transparent bg-gradient-to-b from-black to-primary text-white">
       <div className="container mx-auto grid gap-8 py-10 md:grid-cols-4">
         <div>
           <div className="font-display text-xl font-bold uppercase tracking-wider text-white">
