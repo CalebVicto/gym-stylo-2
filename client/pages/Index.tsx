@@ -6,22 +6,26 @@ import FeaturedProducts from "@/components/FeaturedProducts";
 import Goals from "@/components/Goals";
 import FAQ from "@/components/FAQ";
 import AdBanner from "@/components/AdBanner";
+import TrustBar from "@/components/TrustBar";
 
 export default function Index() {
   return (
     <div>
       <Hero />
-      <section id="marcas" className="container mx-auto py-8 md:py-12">
-        <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-secondary/60 via-muted/40 to-background/40 p-6 backdrop-blur">
-          <div className="mb-4 flex items-center justify-between">
-            <h2 className="font-display text-3xl md:text-4xl uppercase tracking-wider">
-              Marcas de confianza
-            </h2>
-            <div className="text-xs text-muted-foreground">
-              Proveedores certificados • Calidad garantizada
+      <TrustBar />
+      <section id="marcas" className="relative py-8 md:py-12">
+        <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-gradient-to-r from-muted/40 to-secondary/40">
+          <div className="container mx-auto px-4 py-6">
+            <div className="mb-4 flex items-center justify-between">
+              <h2 className="font-display text-3xl md:text-4xl uppercase tracking-wider">
+                Marcas de confianza
+              </h2>
+              <div className="text-xs text-muted-foreground">
+                Proveedores certificados • Calidad garantizada
+              </div>
             </div>
+            <BrandCarousel />
           </div>
-          <BrandCarousel />
         </div>
       </section>
 
@@ -69,13 +73,7 @@ export default function Index() {
       <FeaturedProducts />
 
       <div className="container mx-auto">
-        <div
-          className="rounded-3xl border border-border/60 bg-center bg-cover p-6 backdrop-blur"
-          style={{
-            backgroundImage:
-              "linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.25)), url('https://images.unsplash.com/photo-1517963628607-235ccdd5476e?q=80&w=2000&auto=format&fit=crop')",
-          }}
-        >
+        <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-white via-secondary/40 to-muted/30 p-6">
           <Goals />
         </div>
       </div>
