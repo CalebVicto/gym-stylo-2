@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 text-foreground backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-black bg-[#000000] text-white">
       <div className="container mx-auto grid grid-cols-[auto,1fr,auto] items-center gap-4 py-3">
         {/* Left: Brand */}
         <Link to="/" className="shrink-0">
