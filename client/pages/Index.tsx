@@ -30,11 +30,19 @@ export default function Index() {
         </div>
       </section>
 
-      <ProductBanners />
+      <div className="container mx-auto">
+        <div className="rounded-3xl border border-border/60 bg-secondary p-6">
+          <ProductBanners />
+        </div>
+      </div>
 
       <FeaturedProducts />
 
-      <Goals />
+      <div className="container mx-auto">
+        <div className="rounded-3xl border border-border/60 bg-secondary p-6">
+          <Goals />
+        </div>
+      </div>
 
       <section className="container mx-auto py-8 md:py-12">
         <div className="rounded-2xl border border-border/60 bg-secondary/60 p-6 text-center">
