@@ -81,7 +81,13 @@ export default function Index() {
       <FeaturedProducts />
 
       <div className="container mx-auto">
-        <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-secondary/60 via-muted/40 to-background/40 p-6 backdrop-blur">
+        <div
+          className="rounded-3xl border border-border/60 bg-center bg-cover p-6 backdrop-blur"
+          style={{
+            backgroundImage:
+              "linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.25)), url('https://images.unsplash.com/photo-1517963628607-235ccdd5476e?q=80&w=2000&auto=format&fit=crop')",
+          }}
+        >
           <Goals />
         </div>
       </div>
