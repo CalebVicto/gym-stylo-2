@@ -52,9 +52,21 @@ export default function Hero() {
                   loading={i === 0 ? "eager" : "lazy"}
                 />
               </div>
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-black/0 to-transparent" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Overlay content */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center px-4">
+        <div className="pointer-events-auto max-w-3xl rounded-2xl bg-black/40 p-6 text-center text-white shadow-xl ring-1 ring-white/20 backdrop-blur-sm">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl uppercase tracking-wider">Construye tu cuerpo. Construye tu mente.</h1>
+          <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base text-white/85">Suplementos, programas y equipo para llevar tu rutina al siguiente nivel.</p>
+          <div className="mt-4 flex justify-center gap-3">
+            <a href="/catalog" className="rounded-md bg-primary px-4 py-2 text-xs font-semibold uppercase tracking-wider text-primary-foreground hover:bg-primary/90">Ver catálogo</a>
+            <a href="/catalog?search=ofertas" className="rounded-md border border-white/60 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white hover:bg-white/20">Ofertas</a>
+          </div>
         </div>
       </div>
 
@@ -62,14 +74,14 @@ export default function Hero() {
       <button
         aria-label="Anterior"
         onClick={scrollPrev}
-        className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-border/60 bg-white/70 p-2 text-foreground shadow backdrop-blur transition hover:bg-white"
+        className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-black/60 bg-black/70 p-2 text-white shadow backdrop-blur transition hover:bg-black"
       >
         <ChevronLeft className="h-5 w-5" />
       </button>
       <button
         aria-label="Siguiente"
         onClick={scrollNext}
-        className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-border/60 bg-white/70 p-2 text-foreground shadow backdrop-blur transition hover:bg-white"
+        className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-black/60 bg-black/70 p-2 text-white shadow backdrop-blur transition hover:bg-black"
       >
         <ChevronRight className="h-5 w-5" />
       </button>
@@ -79,7 +91,7 @@ export default function Hero() {
         {SLIDES.map((_, i) => (
           <span
             key={i}
-            className={`h-2 w-2 rounded-full ${i === selectedIndex ? "bg-primary" : "bg-foreground/30"}`}
+            className={`h-2 w-2 rounded-full ${i === selectedIndex ? "bg-primary" : "bg-white/50"}`}
           />
         ))}
       </div>
