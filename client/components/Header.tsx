@@ -8,7 +8,9 @@ export default function Header() {
       <div className="container mx-auto grid grid-cols-[auto,1fr,auto] items-center gap-4 py-3">
         {/* Left: Brand */}
         <Link to="/" className="shrink-0">
-          <span className="font-display text-xl font-bold uppercase tracking-wider text-primary">Stylo Fitness Suplement</span>
+          <span className="font-display text-xl font-bold uppercase tracking-wider text-primary">
+            Stylo Fitness Suplement
+          </span>
         </Link>
 
         {/* Center: Centered Search */}

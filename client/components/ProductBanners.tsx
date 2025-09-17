@@ -25,13 +25,33 @@ export default function ProductBanners() {
   );
 }
 
-function Banner({ to, image, title, subtitle }: { to: string; image: string; title: string; subtitle: string }) {
+function Banner({
+  to,
+  image,
+  title,
+  subtitle,
+}: {
+  to: string;
+  image: string;
+  title: string;
+  subtitle: string;
+}) {
   return (
-    <Link to={to} className="group relative block overflow-hidden rounded-2xl border border-border/60">
-      <img src={image} alt={title} className="h-56 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+    <Link
+      to={to}
+      className="group relative block overflow-hidden rounded-2xl border border-border/60"
+    >
+      <img
+        src={image}
+        alt={title}
+        className="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
       <div className="absolute bottom-4 left-4">
-        <div className="font-display text-2xl uppercase tracking-wider">{title}</div>
+        <div className="font-display text-2xl uppercase tracking-wider">
+          {title}
+        </div>
         <div className="text-xs text-muted-foreground">{subtitle}</div>
       </div>
     </Link>

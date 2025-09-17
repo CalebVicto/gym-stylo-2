@@ -88,24 +88,32 @@ export default function Catalog() {
     <div className="container mx-auto py-10">
       <div className="mb-6 flex items-end justify-between gap-4">
         <div>
-          <h1 className="font-display text-3xl uppercase tracking-wider">Catálogo</h1>
-          <p className="mt-1 text-sm text-muted-foreground">Explora nuestra selección de suplementos de alto rendimiento.</p>
+          <h1 className="font-display text-3xl uppercase tracking-wider">
+            Catálogo
+          </h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Explora nuestra selección de suplementos de alto rendimiento.
+          </p>
         </div>
       </div>
 
       <div className="grid gap-8 md:grid-cols-[260px,1fr]">
         <aside className="rounded-xl border border-border/60 bg-secondary/60 p-4">
-          <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Filtros</div>
+          <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            Filtros
+          </div>
           <div className="mt-4 space-y-3">
             <div>
               <div className="mb-2 text-sm font-semibold">Categoría</div>
               <div className="flex flex-wrap gap-2">
-                {([
-                  { key: "", label: "Todas" },
-                  { key: "proteins", label: "Proteínas" },
-                  { key: "creatine", label: "Creatina" },
-                  { key: "fat-burners", label: "Quemadores" },
-                ] as const).map((c) => (
+                {(
+                  [
+                    { key: "", label: "Todas" },
+                    { key: "proteins", label: "Proteínas" },
+                    { key: "creatine", label: "Creatina" },
+                    { key: "fat-burners", label: "Quemadores" },
+                  ] as const
+                ).map((c) => (
                   <button
                     key={c.key}
                     onClick={() => updateCategory(c.key as any)}
@@ -121,7 +129,10 @@ export default function Catalog() {
               </div>
             </div>
             <div>
-              <div className="mb-2 text-sm font-semibold">Precio máx. ${""}{precioMax.toFixed(0)}</div>
+              <div className="mb-2 text-sm font-semibold">
+                Precio máx. ${""}
+                {precioMax.toFixed(0)}
+              </div>
               <input
                 type="range"
                 min={10}
@@ -146,14 +157,28 @@ export default function Catalog() {
 
         <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((p) => (
-            <article key={p.id} className="group overflow-hidden rounded-2xl border border-border/60 bg-secondary/60">
-              <img src={p.image} alt={p.name} className="h-48 w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" />
+            <article
+              key={p.id}
+              className="group overflow-hidden rounded-2xl border border-border/60 bg-secondary/60"
+            >
+              <img
+                src={p.image}
+                alt={p.name}
+                className="h-48 w-full object-cover transition duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
               <div className="space-y-2 p-4">
-                <div className="text-xs uppercase tracking-wider text-muted-foreground">{p.category.replace("-", " ")}</div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground">
+                  {p.category.replace("-", " ")}
+                </div>
                 <h3 className="line-clamp-2 font-semibold">{p.name}</h3>
                 <div className="flex items-center justify-between">
-                  <div className="font-display text-xl text-primary">${p.price.toFixed(2)}</div>
-                  <span className={`text-xs font-semibold uppercase tracking-wider ${p.inStock ? "text-success" : "text-muted-foreground"}`}>
+                  <div className="font-display text-xl text-primary">
+                    ${p.price.toFixed(2)}
+                  </div>
+                  <span
+                    className={`text-xs font-semibold uppercase tracking-wider ${p.inStock ? "text-success" : "text-muted-foreground"}`}
+                  >
                     {p.inStock ? "En stock" : "Agotado"}
                   </span>
                 </div>

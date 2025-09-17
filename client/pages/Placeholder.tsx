@@ -4,9 +4,12 @@ export default function Placeholder({ title }: { title: string }) {
   return (
     <div className="container mx-auto py-20">
       <div className="mx-auto max-w-2xl rounded-2xl border border-border/60 bg-secondary/60 p-10 text-center">
-        <h1 className="font-display text-3xl uppercase tracking-wider">{title}</h1>
+        <h1 className="font-display text-3xl uppercase tracking-wider">
+          {title}
+        </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Esta página está lista para construirse. Dime qué contenido quieres y la generaré.
+          Esta página está lista para construirse. Dime qué contenido quieres y
+          la generaré.
         </p>
         <Link
           to="/catalog"

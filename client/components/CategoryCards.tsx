@@ -53,7 +53,10 @@ const CATEGORIES = [
 
 export default function CategoryCards() {
   return (
-    <div id="categorias" className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+    <div
+      id="categorias"
+      className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
+    >
       {CATEGORIES.map((c) => (
         <Link
           to={`/catalog?category=${c.key}`}
@@ -68,8 +71,12 @@ export default function CategoryCards() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
           <div className="absolute bottom-4 left-4">
-            <div className="font-display text-2xl font-bold uppercase tracking-wider">{c.title}</div>
-            <div className="mt-1 inline-block rounded bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary-foreground">Comprar</div>
+            <div className="font-display text-2xl font-bold uppercase tracking-wider">
+              {c.title}
+            </div>
+            <div className="mt-1 inline-block rounded bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary-foreground">
+              Comprar
+            </div>
           </div>
         </Link>
       ))}

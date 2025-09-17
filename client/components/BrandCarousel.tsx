@@ -15,7 +15,11 @@ const BRANDS = [
 ];
 
 export default function BrandCarousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start", dragFree: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "start",
+    dragFree: true,
+  });
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -31,7 +35,10 @@ export default function BrandCarousel() {
     <div className="overflow-hidden" ref={emblaRef}>
       <div className="flex">
         {BRANDS.concat(BRANDS).map((b, i) => (
-          <div key={i} className="shrink-0 basis-1/3 sm:basis-1/5 md:basis-1/6 lg:basis-1/8">
+          <div
+            key={i}
+            className="shrink-0 basis-1/3 sm:basis-1/5 md:basis-1/6 lg:basis-1/8"
+          >
             <div className="mx-3 my-4 rounded-lg border border-border/50 bg-secondary/60 px-4 py-3 text-center text-sm font-semibold uppercase tracking-wider text-foreground/80 hover:text-primary">
               {b}
             </div>

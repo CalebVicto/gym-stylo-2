@@ -11,7 +11,11 @@ const SLIDES = [
 ];
 
 export default function Hero() {
-  const [emblaRef, embla] = useEmblaCarousel({ loop: true, align: "start", draggable: true });
+  const [emblaRef, embla] = useEmblaCarousel({
+    loop: true,
+    align: "start",
+    draggable: true,
+  });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const onSelect = useCallback(() => {
