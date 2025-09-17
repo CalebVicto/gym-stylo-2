@@ -61,7 +61,7 @@ export default function CategoryCards() {
         <Link
           to={`/catalog?category=${c.key}`}
           key={c.key}
-          className="group relative block overflow-hidden rounded-2xl border border-border/60"
+          className="group relative block overflow-hidden rounded-2xl border border-border/60 shadow-sm"
         >
           <img
             src={c.image}
@@ -69,12 +69,12 @@ export default function CategoryCards() {
             className="h-52 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-64 md:h-72"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
           <div className="absolute bottom-4 left-4">
-            <div className="font-display text-2xl font-bold uppercase tracking-wider">
+            <div className="font-display text-2xl font-bold uppercase tracking-wider drop-shadow">
               {c.title}
             </div>
-            <div className="mt-1 inline-block rounded bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary-foreground">
+            <div className="mt-1 inline-block rounded-full bg-gradient-to-r from-primary to-accent px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white shadow">
               Comprar
             </div>
           </div>

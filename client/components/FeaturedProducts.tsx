@@ -77,7 +77,7 @@ export default function FeaturedProducts() {
   return (
     <section id="destacados" className="container mx-auto py-8 md:py-12">
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="font-display text-xl uppercase tracking-wider">
+        <h2 className="font-display text-3xl md:text-4xl uppercase tracking-wider">
           Productos destacados
         </h2>
         <a
@@ -96,7 +96,7 @@ export default function FeaturedProducts() {
                 key={p.id}
                 className="min-w-0 shrink-0 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 pr-4"
               >
-                <article className="group overflow-hidden rounded-2xl border border-border/60 bg-secondary/60">
+                <article className="group overflow-hidden rounded-2xl border border-border/60 bg-white/85 shadow-sm ring-1 ring-border backdrop-blur">
                   <div className="relative">
                     <img
                       src={p.image}
