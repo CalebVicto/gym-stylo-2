@@ -5,13 +5,14 @@ import ProductBanners from "@/components/ProductBanners";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import Goals from "@/components/Goals";
 import FAQ from "@/components/FAQ";
+import AdBanner from "@/components/AdBanner";
 
 export default function Index() {
   return (
     <div>
       <Hero />
       <section id="marcas" className="container mx-auto py-8 md:py-12">
-        <div className="rounded-3xl border border-border/60 bg-secondary p-6">
+        <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-secondary/60 via-muted/40 to-background/40 p-6 backdrop-blur">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="font-display text-xl uppercase tracking-wider text-foreground/90">
               Marcas de confianza
@@ -25,7 +26,7 @@ export default function Index() {
       </section>
 
       <section className="container mx-auto py-8 md:py-12" id="categorias">
-        <div className="rounded-3xl border border-border/60 bg-secondary p-6">
+        <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-secondary/60 via-muted/40 to-background/40 p-6 backdrop-blur">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="font-display text-xl uppercase tracking-wider">
               Categorías destacadas
@@ -42,21 +43,32 @@ export default function Index() {
       </section>
 
       <div className="container mx-auto">
-        <div className="rounded-3xl border border-border/60 bg-secondary p-6">
+        <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-secondary/60 via-muted/40 to-background/40 p-6 backdrop-blur">
           <ProductBanners />
         </div>
       </div>
 
+      {/* Ads section */}
+      <section className="container mx-auto py-8 md:py-12">
+        <AdBanner
+          image="https://cdn.builder.io/api/v1/image/assets%2Fdecd85479f4c448b8692e5839094666d%2Ff57eff3720a44e5eb2db90823324754f?format=webp&width=1600"
+          title="¡Manos a la obra!"
+          subtitle="Construye tu cuerpo, tu mente y tu vida. Programas, suplementos y equipo para llevar tu rutina al siguiente nivel."
+          ctaText="Comprar ahora"
+          to="/catalog"
+        />
+      </section>
+
       <FeaturedProducts />
 
       <div className="container mx-auto">
-        <div className="rounded-3xl border border-border/60 bg-secondary p-6">
+        <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-secondary/60 via-muted/40 to-background/40 p-6 backdrop-blur">
           <Goals />
         </div>
       </div>
 
       <section className="container mx-auto py-8 md:py-12">
-        <div className="rounded-2xl border border-border/60 bg-secondary/60 p-6 text-center">
+        <div className="rounded-2xl border border-border/60 bg-gradient-to-br from-secondary/60 via-muted/40 to-background/40 p-6 text-center backdrop-blur">
           <div className="font-display text-2xl">¿Quieres definirte?</div>
           <p className="mt-2 text-sm text-muted-foreground">
             Únete a nuestro programa de fidelidad para bundles exclusivos, guías
