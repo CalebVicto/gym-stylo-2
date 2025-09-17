@@ -77,7 +77,7 @@ export default function FeaturedProducts() {
   return (
     <section id="destacados" className="container mx-auto py-8 md:py-12">
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="font-display text-xl uppercase tracking-wider">
+        <h2 className="font-display text-3xl md:text-4xl uppercase tracking-wider">
           Productos destacados
         </h2>
         <a
