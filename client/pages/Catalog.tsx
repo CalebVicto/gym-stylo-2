@@ -14,7 +14,7 @@ interface Product {
 const PRODUCTS: Product[] = [
   {
     id: "p1",
-    name: "Whey Protein Isolate",
+    name: "Proteína de Suero Isolada",
     price: 39.99,
     category: "proteins",
     inStock: true,
@@ -23,7 +23,7 @@ const PRODUCTS: Product[] = [
   },
   {
     id: "p2",
-    name: "Micronized Creatine Monohydrate",
+    name: "Creatina Monohidratada Micronizada",
     price: 19.99,
     category: "creatine",
     inStock: true,
@@ -32,7 +32,7 @@ const PRODUCTS: Product[] = [
   },
   {
     id: "p3",
-    name: "Thermogenic Fat Burner",
+    name: "Quemador Termogénico",
     price: 29.99,
     category: "fat-burners",
     inStock: false,
@@ -41,7 +41,7 @@ const PRODUCTS: Product[] = [
   },
   {
     id: "p4",
-    name: "Whey Protein Blend",
+    name: "Proteína de Suero Blend",
     price: 34.99,
     category: "proteins",
     inStock: true,
@@ -50,7 +50,7 @@ const PRODUCTS: Product[] = [
   },
   {
     id: "p5",
-    name: "Creatine HCL",
+    name: "Creatina HCL",
     price: 24.99,
     category: "creatine",
     inStock: true,
@@ -61,8 +61,8 @@ const PRODUCTS: Product[] = [
 
 export default function Catalog() {
   const [params, setParams] = useSearchParams();
-  const [onlyAvailable, setOnlyAvailable] = useState(false);
-  const [maxPrice, setMaxPrice] = useState<number>(80);
+  const [soloDisponibles, setSoloDisponibles] = useState(false);
+  const [precioMax, setPrecioMax] = useState<number>(80);
 
   const category = (params.get("category") as Product["category"]) || "";
   const search = params.get("search")?.toLowerCase() || "";
@@ -71,11 +71,11 @@ export default function Catalog() {
     return PRODUCTS.filter((p) => {
       const cat = category ? p.category === category : true;
       const s = search ? p.name.toLowerCase().includes(search) : true;
-      const avail = onlyAvailable ? p.inStock : true;
-      const price = p.price <= maxPrice;
+      const avail = soloDisponibles ? p.inStock : true;
+      const price = p.price <= precioMax;
       return cat && s && avail && price;
     });
-  }, [category, search, onlyAvailable, maxPrice]);
+  }, [category, search, soloDisponibles, precioMax]);
 
   const updateCategory = (c: Product["category"] | "") => {
     const next = new URLSearchParams(params);
@@ -88,23 +88,23 @@ export default function Catalog() {
     <div className="container mx-auto py-10">
       <div className="mb-6 flex items-end justify-between gap-4">
         <div>
-          <h1 className="font-display text-3xl uppercase tracking-wider">Product Catalog</h1>
-          <p className="mt-1 text-sm text-muted-foreground">Browse our selection of high-performance supplements.</p>
+          <h1 className="font-display text-3xl uppercase tracking-wider">Catálogo</h1>
+          <p className="mt-1 text-sm text-muted-foreground">Explora nuestra selección de suplementos de alto rendimiento.</p>
         </div>
       </div>
 
       <div className="grid gap-8 md:grid-cols-[260px,1fr]">
         <aside className="rounded-xl border border-border/60 bg-secondary/60 p-4">
-          <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Filters</div>
+          <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Filtros</div>
           <div className="mt-4 space-y-3">
             <div>
-              <div className="mb-2 text-sm font-semibold">Category</div>
+              <div className="mb-2 text-sm font-semibold">Categoría</div>
               <div className="flex flex-wrap gap-2">
                 {([
-                  { key: "", label: "All" },
-                  { key: "proteins", label: "Proteins" },
-                  { key: "creatine", label: "Creatine" },
-                  { key: "fat-burners", label: "Fat Burners" },
+                  { key: "", label: "Todas" },
+                  { key: "proteins", label: "Proteínas" },
+                  { key: "creatine", label: "Creatina" },
+                  { key: "fat-burners", label: "Quemadores" },
                 ] as const).map((c) => (
                   <button
                     key={c.key}
@@ -121,14 +121,14 @@ export default function Catalog() {
               </div>
             </div>
             <div>
-              <div className="mb-2 text-sm font-semibold">Max Price ${""}{maxPrice.toFixed(0)}</div>
+              <div className="mb-2 text-sm font-semibold">Precio máx. ${""}{precioMax.toFixed(0)}</div>
               <input
                 type="range"
                 min={10}
                 max={100}
                 step={1}
-                value={maxPrice}
-                onChange={(e) => setMaxPrice(parseInt(e.target.value))}
+                value={precioMax}
+                onChange={(e) => setPrecioMax(parseInt(e.target.value))}
                 className="w-full"
               />
             </div>
@@ -136,10 +136,10 @@ export default function Catalog() {
               <input
                 type="checkbox"
                 className="h-4 w-4 accent-[hsl(var(--primary))]"
-                checked={onlyAvailable}
-                onChange={(e) => setOnlyAvailable(e.target.checked)}
+                checked={soloDisponibles}
+                onChange={(e) => setSoloDisponibles(e.target.checked)}
               />
-              Only in stock
+              Solo disponibles
             </label>
           </div>
         </aside>
@@ -154,18 +154,18 @@ export default function Catalog() {
                 <div className="flex items-center justify-between">
                   <div className="font-display text-xl text-primary">${p.price.toFixed(2)}</div>
                   <span className={`text-xs font-semibold uppercase tracking-wider ${p.inStock ? "text-success" : "text-muted-foreground"}`}>
-                    {p.inStock ? "In Stock" : "Out of Stock"}
+                    {p.inStock ? "En stock" : "Agotado"}
                   </span>
                 </div>
                 <Button className="mt-2 w-full rounded-lg bg-primary uppercase tracking-wider text-primary-foreground hover:bg-primary/90">
-                  Add to Cart
+                  Agregar al carrito
                 </Button>
               </div>
             </article>
           ))}
           {filtered.length === 0 && (
             <div className="col-span-full rounded-xl border border-border/60 p-8 text-center text-sm text-muted-foreground">
-              No products found. Try adjusting your filters.
+              No se encontraron productos. Ajusta tus filtros.
             </div>
           )}
         </section>
