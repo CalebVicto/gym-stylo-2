@@ -11,9 +11,7 @@ const NotFound = () => {
     );
   }, [location.pathname]);
 
-  return {
-    /* Lightweight content; layout handles header/footer */
-  } as any || (
+  return (
     <div className="container mx-auto py-20">
       <div className="mx-auto max-w-xl rounded-2xl border border-border/60 bg-secondary/60 p-10 text-center">
         <div className="font-display text-5xl text-primary">404</div>
