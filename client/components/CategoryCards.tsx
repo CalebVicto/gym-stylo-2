@@ -37,11 +37,23 @@ const CATEGORIES = [
     image:
       "https://images.unsplash.com/photo-1598550880863-4fc0a3d0d00d?q=80&w=1600&auto=format&fit=crop",
   },
+  {
+    key: "mass-gainers",
+    title: "Ganadores de peso",
+    image:
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
+    key: "omega-3",
+    title: "Omega-3",
+    image:
+      "https://images.unsplash.com/photo-1483721310020-03333e577078?q=80&w=1600&auto=format&fit=crop",
+  },
 ];
 
 export default function CategoryCards() {
   return (
-    <div id="categorias" className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div id="categorias" className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
       {CATEGORIES.map((c) => (
         <Link
           to={`/catalog?category=${c.key}`}
