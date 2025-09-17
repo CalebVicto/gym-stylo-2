@@ -26,6 +26,12 @@ export default function Index() {
         <CategoryCards />
       </section>
 
+      <ProductBanners />
+
+      <FeaturedProducts />
+
+      <Goals />
+
       <section className="container mx-auto py-8 md:py-12">
         <div className="rounded-2xl border border-border/60 bg-secondary/60 p-6 text-center">
           <div className="font-display text-2xl">¿Quieres definirte?</div>
@@ -33,6 +39,8 @@ export default function Index() {
           <a href="/catalog" className="mt-4 inline-block rounded-lg bg-primary px-5 py-3 font-semibold uppercase tracking-wider text-primary-foreground hover:bg-primary/90">Ver bundles</a>
         </div>
       </section>
+
+      <FAQ />
     </div>
   );
 }
