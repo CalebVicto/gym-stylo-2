@@ -28,7 +28,7 @@ export default function Goals() {
   return (
     <section id="objetivos" className="container mx-auto py-8 md:py-12">
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="font-display text-xl uppercase tracking-wider">
+        <h2 className="font-display text-3xl md:text-4xl uppercase tracking-wider">
           ¿Cuál es tu objetivo?
         </h2>
       </div>
@@ -37,7 +37,7 @@ export default function Goals() {
           <Link
             key={g.key}
             to={g.to}
-            className="group relative block overflow-hidden rounded-2xl border border-border/60"
+            className="group relative block overflow-hidden rounded-2xl border border-border/60 shadow-sm"
           >
             <img
               src={g.image}
@@ -45,9 +45,9 @@ export default function Goals() {
               className="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-4 left-4">
-              <div className="font-display text-2xl uppercase tracking-wider">
+              <div className="font-display text-2xl uppercase tracking-wider drop-shadow">
                 {g.title}
               </div>
             </div>
