@@ -1,6 +1,10 @@
 import Hero from "@/components/Hero";
 import BrandCarousel from "@/components/BrandCarousel";
 import CategoryCards from "@/components/CategoryCards";
+import ProductBanners from "@/components/ProductBanners";
+import FeaturedProducts from "@/components/FeaturedProducts";
+import Goals from "@/components/Goals";
+import FAQ from "@/components/FAQ";
 
 export default function Index() {
   return (
