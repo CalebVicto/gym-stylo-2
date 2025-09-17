@@ -8,7 +8,7 @@ interface Props {
   size?: "sm" | "md" | "lg";
 }
 
-export default function SearchBar({ className, size = "lg" }: Props) {
+export default function SearchBar({ className, size = "sm" }: Props) {
   const navigate = useNavigate();
   const [params] = useSearchParams();
   const [q, setQ] = useState<string>("");
@@ -39,21 +39,22 @@ export default function SearchBar({ className, size = "lg" }: Props) {
           sizes[size],
         )}
       >
-        <Search className="pointer-events-none absolute left-4 h-5 w-5 text-muted-foreground" />
+        <Search className="pointer-events-none absolute left-3 h-4 w-4 text-muted-foreground" />
         <input
           ref={inputRef}
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="Search proteins, creatine, fat burners..."
+          placeholder="Buscar proteínas, creatina, quemadores..."
+          aria-label="Buscar"
           className={cn(
-            "w-full bg-transparent pl-12 pr-4 outline-none placeholder:text-muted-foreground/70",
+            "w-full bg-transparent pl-9 pr-20 outline-none placeholder:text-muted-foreground/70",
           )}
         />
         <button
           type="submit"
-          className="absolute right-2 rounded-lg bg-primary px-4 py-2 font-semibold uppercase tracking-wide text-primary-foreground transition hover:bg-primary/90"
+          className="absolute right-2 rounded-lg bg-primary px-3 py-1.5 text-sm font-semibold uppercase tracking-wide text-primary-foreground transition hover:bg-primary/90"
         >
-          Search
+          Buscar
         </button>
       </div>
     </form>
