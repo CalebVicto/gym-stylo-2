@@ -12,18 +12,12 @@ export default function Index() {
     <div>
       <Hero />
       <section id="marcas" className="container mx-auto py-8 md:py-12">
-        <div
-          className="rounded-3xl border border-border/60 bg-center bg-cover p-6 backdrop-blur"
-          style={{
-            backgroundImage:
-              "linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.25)), url('https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2000&auto=format&fit=crop')",
-          }}
-        >
+        <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-secondary/60 via-muted/40 to-background/40 p-6 backdrop-blur">
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="font-display text-3xl md:text-4xl uppercase tracking-wider text-white">
+            <h2 className="font-display text-3xl md:text-4xl uppercase tracking-wider">
               Marcas de confianza
             </h2>
-            <div className="text-xs text-white/80">
+            <div className="text-xs text-muted-foreground">
               Proveedores certificados • Calidad garantizada
             </div>
           </div>
@@ -32,15 +26,9 @@ export default function Index() {
       </section>
 
       <section className="container mx-auto py-8 md:py-12" id="categorias">
-        <div
-          className="rounded-3xl border border-border/60 bg-center bg-cover p-6 backdrop-blur"
-          style={{
-            backgroundImage:
-              "linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.25)), url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=2000&auto=format&fit=crop')",
-          }}
-        >
+        <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-secondary/60 via-muted/40 to-background/40 p-6 backdrop-blur">
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="font-display text-3xl md:text-4xl uppercase tracking-wider text-white">
+            <h2 className="font-display text-3xl md:text-4xl uppercase tracking-wider">
               Categorías destacadas
             </h2>
             <a
