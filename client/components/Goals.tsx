@@ -4,19 +4,19 @@ const GOALS = [
   {
     key: "bulking",
     title: "Ganancia muscular",
-    image: "https://images.unsplash.com/photo-1546817372-628669db4659?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop",
     to: "/catalog?search=bulking",
   },
   {
     key: "cutting",
     title: "Definición",
-    image: "https://images.unsplash.com/photo-1526403226-eda5eb237f58?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=1600&auto=format&fit=crop",
     to: "/catalog?search=cutting",
   },
   {
     key: "performance",
     title: "Rendimiento",
-    image: "https://images.unsplash.com/photo-1540496905036-5937c10647e9?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1600&auto=format&fit=crop",
     to: "/catalog?search=performance",
   },
 ];
