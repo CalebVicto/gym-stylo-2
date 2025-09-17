@@ -113,6 +113,13 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    /* Urban gradient background */
+    background-image:
+      radial-gradient(closest-side at 15% 10%, hsl(var(--accent) / 0.25), transparent 60%),
+      radial-gradient(closest-side at 85% 0%, hsl(var(--primary) / 0.22), transparent 55%),
+      linear-gradient(180deg, hsl(var(--background)), hsl(var(--background)) 60%, hsl(var(--background)));
+    background-attachment: fixed, fixed, fixed;
+    background-size: cover;
     font-family:
       "Montserrat",
       system-ui,
