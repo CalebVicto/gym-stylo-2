@@ -9,27 +9,26 @@
   /**
    * Tailwind CSS theme
    * tailwind.config.ts expects the following color variables to be expressed as HSL values.
-   * A different format will require also updating the theme in tailwind.config.ts.
-  */
+   */
   :root {
-    /* Brand palette */
-    --background: 0 0% 0%; /* Black */
-    --foreground: 0 0% 100%; /* White */
+    /* Light theme (fondo blanco) */
+    --background: 0 0% 100%; /* White */
+    --foreground: 0 0% 13%; /* #212121 */
 
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
 
     --primary: 26 100% 50%; /* Orange #FF6F00 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 13%; /* Dark Gray #212121 */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%; /* Light gray cards */
+    --secondary-foreground: 0 0% 13%;
 
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 45%;
 
     --accent: 186 100% 38%; /* Turquoise #00ACC1 */
     --accent-foreground: 0 0% 0%;
@@ -40,25 +39,25 @@
     --success: 88 50% 53%; /* Green #8BC34A */
     --success-foreground: 0 0% 0%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
+    --border: 0 0% 90%;
+    --input: 0 0% 92%;
     --ring: 186 100% 38%;
 
     --radius: 0.75rem;
 
-    /* Sidebar (not used yet but kept consistent) */
-    --sidebar-background: 0 0% 0%;
-    --sidebar-foreground: 0 0% 100%;
+    /* Sidebar (coherente con tema claro) */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 13%;
     --sidebar-primary: 26 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 20%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 13%;
+    --sidebar-border: 0 0% 90%;
     --sidebar-ring: 186 100% 38%;
   }
 
   .dark {
-    /* Same as root to keep a unified dark, urban look */
+    /* Opción de tema oscuro urbano */
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
 
@@ -71,7 +70,7 @@
     --primary: 26 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 13%;
+    --secondary: 0 0% 10%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 10%;
@@ -124,13 +123,13 @@
 
 @layer utilities {
   .bg-grid {
-    background-image: linear-gradient(to right, hsl(0 0% 100% / 0.06) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(0 0% 100% / 0.06) 1px, transparent 1px);
+    background-image: linear-gradient(to right, hsl(0 0% 0% / 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(0 0% 0% / 0.06) 1px, transparent 1px);
     background-size: 24px 24px;
     background-position: center;
   }
   .bg-noise {
-    background-image: radial-gradient(hsl(0 0% 100% / 0.05) 1px, transparent 1px);
+    background-image: radial-gradient(hsl(0 0% 0% / 0.05) 1px, transparent 1px);
     background-size: 3px 3px;
   }
 }
