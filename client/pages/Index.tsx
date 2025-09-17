@@ -93,8 +93,14 @@ export default function Index() {
       </div>
 
       <section className="container mx-auto py-8 md:py-12">
-        <div className="rounded-2xl border border-border/60 bg-gradient-to-br from-secondary/60 via-muted/40 to-background/40 p-6 text-center backdrop-blur">
-          <div className="font-display text-2xl">¿Quieres definirte?</div>
+        <div
+          className="rounded-2xl border border-border/60 bg-center bg-cover p-6 text-center backdrop-blur"
+          style={{
+            backgroundImage:
+              "linear-gradient(180deg, rgba(0,0,0,.65), rgba(0,0,0,.25)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2000&auto=format&fit=crop')",
+          }}
+        >
+          <div className="font-display text-3xl md:text-4xl text-white">¿Quieres definirte?</div>
           <p className="mt-2 text-sm text-muted-foreground">
             Únete a nuestro programa de fidelidad para bundles exclusivos, guías
             de nutrición y descuentos de temporada.
