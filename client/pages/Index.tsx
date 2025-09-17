@@ -1,62 +1,34 @@
-import { DemoResponse } from "@shared/api";
-import { useEffect, useState } from "react";
+import Hero from "@/components/Hero";
+import BrandCarousel from "@/components/BrandCarousel";
+import CategoryCards from "@/components/CategoryCards";
 
 export default function Index() {
-  const [exampleFromServer, setExampleFromServer] = useState("");
-  // Fetch users on component mount
-  useEffect(() => {
-    fetchDemo();
-  }, []);
-
-  // Example of how to fetch data from the server (if needed)
-  const fetchDemo = async () => {
-    try {
-      const response = await fetch("/api/demo");
-      const data = (await response.json()) as DemoResponse;
-      setExampleFromServer(data.message);
-    } catch (error) {
-      console.error("Error fetching hello:", error);
-    }
-  };
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-      <div className="text-center">
-        {/* TODO: FUSION_GENERATION_APP_PLACEHOLDER replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
-          <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
-          >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-            />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
-            />
-          </svg>
-          Generating your app...
-        </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
-        <p className="mt-4 hidden max-w-md">{exampleFromServer}</p>
-      </div>
+    <div>
+      <Hero />
+      <section id="brands" className="container mx-auto py-8 md:py-12">
+        <div className="mb-4 flex items-center justify-between">
+          <h2 className="font-display text-xl uppercase tracking-wider text-foreground/90">Trusted Brands</h2>
+          <div className="text-xs text-muted-foreground">Certified suppliers • Quality guaranteed</div>
+        </div>
+        <BrandCarousel />
+      </section>
+
+      <section className="container mx-auto py-8 md:py-12">
+        <div className="mb-4 flex items-center justify-between">
+          <h2 className="font-display text-xl uppercase tracking-wider">Featured Categories</h2>
+          <a href="/catalog" className="text-sm uppercase tracking-wider text-primary hover:underline">View All</a>
+        </div>
+        <CategoryCards />
+      </section>
+
+      <section className="container mx-auto py-8 md:py-12">
+        <div className="rounded-2xl border border-border/60 bg-secondary/60 p-6 text-center">
+          <div className="font-display text-2xl">Want to Get Shredded?</div>
+          <p className="mt-2 text-sm text-muted-foreground">Join our loyalty program for exclusive bundles, nutrition guides, and seasonal discounts.</p>
+          <a href="/catalog" className="mt-4 inline-block rounded-lg bg-primary px-5 py-3 font-semibold uppercase tracking-wider text-primary-foreground hover:bg-primary/90">Explore Bundles</a>
+        </div>
+      </section>
     </div>
   );
 }
