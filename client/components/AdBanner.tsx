@@ -8,7 +8,13 @@ interface AdBannerProps {
   to?: string;
 }
 
-export default function AdBanner({ image, title, subtitle, ctaText, to = "/catalog" }: AdBannerProps) {
+export default function AdBanner({
+  image,
+  title,
+  subtitle,
+  ctaText,
+  to = "/catalog",
+}: AdBannerProps) {
   return (
     <Link
       to={to}

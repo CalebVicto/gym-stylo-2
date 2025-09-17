@@ -61,11 +61,26 @@ export default function Hero() {
       {/* Overlay content */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center px-4">
         <div className="pointer-events-auto max-w-3xl rounded-2xl bg-black/40 p-6 text-center text-white shadow-xl ring-1 ring-white/20 backdrop-blur-sm">
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl uppercase tracking-wider">Construye tu cuerpo. Construye tu mente.</h1>
-          <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base text-white/85">Suplementos, programas y equipo para llevar tu rutina al siguiente nivel.</p>
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl uppercase tracking-wider">
+            Construye tu cuerpo. Construye tu mente.
+          </h1>
+          <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base text-white/85">
+            Suplementos, programas y equipo para llevar tu rutina al siguiente
+            nivel.
+          </p>
           <div className="mt-4 flex justify-center gap-3">
-            <a href="/catalog" className="rounded-md bg-primary px-4 py-2 text-xs font-semibold uppercase tracking-wider text-primary-foreground hover:bg-primary/90">Ver catálogo</a>
-            <a href="/catalog?search=ofertas" className="rounded-md border border-white/60 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white hover:bg-white/20">Ofertas</a>
+            <a
+              href="/catalog"
+              className="rounded-md bg-primary px-4 py-2 text-xs font-semibold uppercase tracking-wider text-primary-foreground hover:bg-primary/90"
+            >
+              Ver catálogo
+            </a>
+            <a
+              href="/catalog?search=ofertas"
+              className="rounded-md border border-white/60 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white hover:bg-white/20"
+            >
+              Ofertas
+            </a>
           </div>
         </div>
       </div>

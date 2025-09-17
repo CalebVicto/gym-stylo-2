@@ -1,4 +1,10 @@
-import { ShieldCheck, CreditCard, Timer, BadgeCheck, MessageSquareText } from "lucide-react";
+import {
+  ShieldCheck,
+  CreditCard,
+  Timer,
+  BadgeCheck,
+  MessageSquareText,
+} from "lucide-react";
 
 const FEATURES = [
   {
@@ -40,7 +46,9 @@ export default function TrustBar() {
                   <Icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <div className="text-sm font-semibold uppercase tracking-wide">{title}</div>
+                  <div className="text-sm font-semibold uppercase tracking-wide">
+                    {title}
+                  </div>
                   <div className="text-xs text-muted-foreground">{desc}</div>
                 </div>
               </li>
