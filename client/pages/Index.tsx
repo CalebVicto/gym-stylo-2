@@ -21,11 +21,13 @@ export default function Index() {
       </section>
 
       <section className="container mx-auto py-8 md:py-12" id="categorias">
-        <div className="mb-4 flex items-center justify-between">
-          <h2 className="font-display text-xl uppercase tracking-wider">Categorías destacadas</h2>
-          <a href="/catalog" className="text-sm uppercase tracking-wider text-primary hover:underline">Ver todo</a>
+        <div className="rounded-3xl border border-border/60 bg-secondary p-6">
+          <div className="mb-4 flex items-center justify-between">
+            <h2 className="font-display text-xl uppercase tracking-wider">Categorías destacadas</h2>
+            <a href="/catalog" className="text-sm uppercase tracking-wider text-primary hover:underline">Ver todo</a>
+          </div>
+          <CategoryCards />
         </div>
-        <CategoryCards />
       </section>
 
       <ProductBanners />
