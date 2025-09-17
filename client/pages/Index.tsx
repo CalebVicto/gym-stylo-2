@@ -11,11 +11,13 @@ export default function Index() {
     <div>
       <Hero />
       <section id="marcas" className="container mx-auto py-8 md:py-12">
-        <div className="mb-4 flex items-center justify-between">
-          <h2 className="font-display text-xl uppercase tracking-wider text-foreground/90">Marcas de confianza</h2>
-          <div className="text-xs text-muted-foreground">Proveedores certificados • Calidad garantizada</div>
+        <div className="rounded-3xl border border-border/60 bg-secondary p-6">
+          <div className="mb-4 flex items-center justify-between">
+            <h2 className="font-display text-xl uppercase tracking-wider text-foreground/90">Marcas de confianza</h2>
+            <div className="text-xs text-muted-foreground">Proveedores certificados • Calidad garantizada</div>
+          </div>
+          <BrandCarousel />
         </div>
-        <BrandCarousel />
       </section>
 
       <section className="container mx-auto py-8 md:py-12" id="categorias">
