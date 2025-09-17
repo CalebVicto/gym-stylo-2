@@ -35,7 +35,7 @@ export default function SearchBar({ className, size = "sm" }: Props) {
     <form onSubmit={onSubmit} className={cn("w-full", className)}>
       <div
         className={cn(
-          "group relative flex items-center rounded-xl border border-input bg-secondary text-foreground transition focus-within:ring-2 focus-within:ring-ring",
+          "group relative flex items-center rounded-xl border border-input bg-secondary text-foreground transition focus-within:ring-2 focus-within:ring-ring/60",
           sizes[size],
         )}
       >
@@ -47,15 +47,9 @@ export default function SearchBar({ className, size = "sm" }: Props) {
           placeholder="Buscar proteínas, creatina, quemadores..."
           aria-label="Buscar"
           className={cn(
-            "w-full bg-transparent pl-9 pr-20 outline-none placeholder:text-muted-foreground/70",
+            "w-full bg-transparent pl-9 pr-3 outline-none placeholder:text-muted-foreground/70",
           )}
         />
-        <button
-          type="submit"
-          className="absolute right-2 rounded-lg bg-primary px-3 py-1.5 text-sm font-semibold uppercase tracking-wide text-primary-foreground transition hover:bg-primary/90"
-        >
-          Buscar
-        </button>
       </div>
     </form>
   );
