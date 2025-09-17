@@ -1,10 +1,11 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SearchBar from "@/components/SearchBar";
 import { ShoppingCart } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-black bg-[#000000] text-white">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 text-foreground backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto grid grid-cols-[auto,1fr,auto] items-center gap-4 py-3">
         {/* Left: Brand */}
         <Link to="/" className="shrink-0">
@@ -18,8 +19,14 @@ export default function Header() {
           <SearchBar size="sm" />
         </div>
 
-        {/* Right: Empty (links removidos) */}
-        <div className="ml-auto" />
+        {/* Right: Cart button */}
+        <div className="ml-auto flex items-center gap-2">
+          <Button variant="ghost" size="icon" asChild>
+            <Link to="/cart" aria-label="Carrito">
+              <ShoppingCart className="h-5 w-5" />
+            </Link>
+          </Button>
+        </div>
       </div>
 
       {/* Mobile search */}
