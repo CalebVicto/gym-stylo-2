@@ -19,6 +19,24 @@ const CATEGORIES = [
     image:
       "https://images.unsplash.com/photo-1585238342024-78d387f4a707?q=80&w=1600&auto=format&fit=crop",
   },
+  {
+    key: "vitamins",
+    title: "Vitaminas",
+    image:
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
+    key: "preworkout",
+    title: "Pre-entreno",
+    image:
+      "https://images.unsplash.com/photo-1517963628607-235ccdd5476e?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
+    key: "aminos",
+    title: "Aminoácidos",
+    image:
+      "https://images.unsplash.com/photo-1598550880863-4fc0a3d0d00d?q=80&w=1600&auto=format&fit=crop",
+  },
 ];
 
 export default function CategoryCards() {
