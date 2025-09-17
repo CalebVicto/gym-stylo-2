@@ -1,46 +1,83 @@
-import { Link } from "react-router-dom";
+import useEmblaCarousel from "embla-carousel-react";
+import { useCallback, useEffect, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const SLIDES = [
+  "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2400&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2400&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=2400&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1546483875-ad9014c88eba?q=80&w=2400&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1517963628607-235ccdd5476e?q=80&w=2400&auto=format&fit=crop",
+];
 
 export default function Hero() {
+  const [emblaRef, embla] = useEmblaCarousel({ loop: true, align: "start", draggable: true });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const onSelect = useCallback(() => {
+    if (!embla) return;
+    setSelectedIndex(embla.selectedScrollSnap());
+  }, [embla]);
+
+  useEffect(() => {
+    if (!embla) return;
+    embla.on("select", onSelect);
+    onSelect();
+    const id = setInterval(() => {
+      try {
+        embla.scrollNext();
+      } catch {}
+    }, 3500);
+    return () => clearInterval(id);
+  }, [embla, onSelect]);
+
+  const scrollPrev = () => embla?.scrollPrev();
+  const scrollNext = () => embla?.scrollNext();
+
   return (
-    <section className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-noise" />
-      <div className="absolute inset-0 bg-grid" />
-      <div className="container relative mx-auto grid items-center gap-10 py-10 md:grid-cols-2 md:py-16">
-        <div className="order-2 md:order-1">
-          <h1 className="font-display text-4xl leading-tight md:text-6xl">
-            <span className="text-foreground/80">¿Buscas</span>
-            <br />
-            <span className="text-primary">Fuerza?</span>
-          </h1>
-          <p className="mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
-            Suplementos premium para rendimiento, recuperación y resultados. Bulking, cutting o potencia máxima: aliméntate mejor.
-          </p>
-          <div className="mt-6 flex gap-3">
-            <Link
-              to="/catalog"
-              className="rounded-xl bg-primary px-6 py-3 font-semibold uppercase tracking-wider text-primary-foreground transition hover:bg-primary/90"
-            >
-              Comprar ahora
-            </Link>
-            <a
-              href="#marcas"
-              className="rounded-xl border border-border/60 px-6 py-3 font-semibold uppercase tracking-wider text-foreground/90 hover:border-primary hover:text-primary"
-            >
-              Marcas top
-            </a>
-          </div>
+    <section className="relative w-full">
+      <div className="relative -mx-0 w-screen overflow-hidden" ref={emblaRef}>
+        <div className="flex">
+          {SLIDES.map((src, i) => (
+            <div key={i} className="relative shrink-0 basis-full">
+              <div className="h-[56vh] min-h-[320px] w-full sm:h-[64vh] md:h-[72vh]">
+                <img
+                  src={src}
+                  alt={`Slide ${i + 1}`}
+                  className="h-full w-full object-cover"
+                  loading={i === 0 ? "eager" : "lazy"}
+                />
+              </div>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-black/0 to-transparent" />
+            </div>
+          ))}
         </div>
-        <div className="order-1 md:order-2">
-          <div className="relative">
-            <img
-              src="https://images.unsplash.com/photo-1517832606299-7ae9b720a694?q=80&w=1800&auto=format&fit=crop"
-              alt="Atleta levantando pesas"
-              className="relative z-10 rounded-2xl border border-border/60 object-cover shadow-[0_0_0_1px_hsl(var(--border))]"
-            />
-            <div className="absolute -left-6 -top-6 h-24 w-24 rounded-xl bg-accent/30 blur-2xl" />
-            <div className="absolute -bottom-6 -right-6 h-24 w-24 rounded-xl bg-primary/30 blur-2xl" />
-          </div>
-        </div>
+      </div>
+
+      {/* Controls */}
+      <button
+        aria-label="Anterior"
+        onClick={scrollPrev}
+        className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-border/60 bg-white/70 p-2 text-foreground shadow backdrop-blur transition hover:bg-white"
+      >
+        <ChevronLeft className="h-5 w-5" />
+      </button>
+      <button
+        aria-label="Siguiente"
+        onClick={scrollNext}
+        className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-border/60 bg-white/70 p-2 text-foreground shadow backdrop-blur transition hover:bg-white"
+      >
+        <ChevronRight className="h-5 w-5" />
+      </button>
+
+      {/* Dots */}
+      <div className="pointer-events-none absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+        {SLIDES.map((_, i) => (
+          <span
+            key={i}
+            className={`h-2 w-2 rounded-full ${i === selectedIndex ? "bg-primary" : "bg-foreground/30"}`}
+          />
+        ))}
       </div>
     </section>
   );
